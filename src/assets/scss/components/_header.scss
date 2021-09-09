@@ -1,0 +1,348 @@
+.header {
+    &__review {
+        color: $color-GrayBlue60;
+        background-color: $bg-white;
+        position: relative;
+        svg {
+            path {
+                fill: $color-GrayBlue60
+            }
+        }
+        .header__categories {
+            .burger {
+                span {
+                    background-color: $color-GrayBlue60;
+                }
+            }
+        } 
+        .header__nav {
+            &-link {
+                color: $color-GrayBlue70;
+            }
+        }
+        .search {
+            input {
+                &::placeholder {
+                    color: $color-GrayBlue70;
+                }
+            }
+        } 
+    }
+    padding: vw(30) 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: $text-white;
+    border-bottom: 1px rgba(255, 255, 255, 0.1) solid;
+    @include flex($justify: space-around);
+    &__logo {
+        @include flex();
+        &-text {
+            margin-left: vw(35);
+            @include font(700, vw(18), vw(30))
+        }
+    }
+    &__nav {
+        &-list {
+            @include flex();
+            list-style-type: none;
+        }
+        &-item {
+            margin-right: vw(30);
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &-link {
+            text-decoration: none;
+            @include font(700, vw(13), vw(25));
+            color: $text-white;
+        }
+    }
+    .search {
+        @include flex();
+        svg {
+            width: vw(17);
+        }
+        input {
+            margin-left: vw(26);
+            @include font(700, vw(13), vw(25));
+            height: vh(20);
+            color: rgba(255, 255, 255, 0.6);
+            background-color: transparent;
+            border: none;
+            &::placeholder {
+                @include font(700, vw(13), vw(25));
+            }
+        }
+    } 
+    &__location {
+        @include flex();
+        .location__citys {
+            list-style-type: none;
+            &-item {
+                margin: 0 vw(31) 0 vw(23);
+                @include font(700, vw(13), vw(25));
+            }
+            &-button {
+                background: rgba($color: #000000, $alpha: 0);
+                border: none;
+            }
+        }
+    }
+    &__categories {
+        display: flex;
+        .burger {
+            margin-right: vh(26);
+            span {
+                position: relative;
+                display: inline-block;
+                margin-bottom: vh(1);
+                width: vw(22);
+                height: vw(2.5);
+                border-radius: vw(3);
+                background-color: white;
+                &::before, &::after {
+                    content: '';
+                    position: absolute;
+                    transform: translateY(vw(-6));
+                    width: 100%;
+                    height: 100%;
+                    background-color: inherit;
+                }
+                &::after {
+                    transform: translateY(vw(6));
+                }
+            }
+        }
+        &-text {
+            @include font(700, vw(13), vw(25));
+        }
+    }
+}
+
+@include Desctop {
+    .header {
+        padding: vdes(30) 0;
+        &__logo {
+            &-text {
+                margin-left: vdes(35);
+                @include font(700, vdes(23), vdes(30))
+            }
+        }
+        &__nav {
+            &-item {
+                margin-right: vdes(30);
+            }
+            &-link {
+                @include font(700, vdes(18), vdes(25));
+            }
+        }
+        .search {
+            svg {
+                width: vdes(22);
+            }
+            input {
+                margin-left: vdes(26);
+                @include font(700, vdes(18), vdes(25));
+                height: vdes(25);
+                &::placeholder {
+                    @include font(700, vdes(18), vdes(25));
+                }
+            }
+        } 
+        &__location {
+            .location__citys {
+                &-item {
+                    margin: 0 vdes(31) 0 vdes(23);
+                    @include font(700, vdes(18), vdes(25));
+                }
+            }
+        }
+        &__categories {
+            .burger {
+                margin-right: vdes(26);
+                span {
+                    margin-bottom: vdes(10);
+                    width: vdes(22);
+                    height: vdes(2.5);
+                    border-radius: vdes(3);
+                    &::before, &::after {
+                        transform: translateY(vdes(-6));
+                    }
+                    &::after {
+                        transform: translateY(vdes(6));
+                    }
+                }
+            }
+            &-text {
+                @include font(700, vdes(18), vdes(25));
+            }
+        }
+    }
+}
+@include Laptop {
+    .header {
+        padding: vlap(30) 0;
+        &__logo {
+            &-text {
+                margin-left: vlap(35);
+                @include font(700, vlap(23), vlap(30))
+            }
+        }
+        &__nav {
+            display: none;
+        }
+        .search {
+            svg {
+                width: vlap(22);
+            }
+            input {
+                margin-left: vlap(26);
+                @include font(700, vlap(18), vlap(25));
+                height: vlap(25);
+                &::placeholder {
+                    @include font(700, vlap(18), vlap(25));
+                }
+            }
+        } 
+        &__location {
+            .location__citys {
+                &-item {
+                    margin: 0 vlap(31) 0 vlap(23);
+                    @include font(700, vlap(18), vlap(25));
+                }
+            }
+        }
+        &__categories {
+            .burger {
+                margin-right: vlap(26);
+                span {
+                    margin-bottom: vlap(12);
+                    width: vlap(22);
+                    height: vlap(2.5);
+                    border-radius: vlap(3);
+                    &::before, &::after {
+                        transform: translateY(vlap(-5));
+                    }
+                    &::after {
+                        transform: translateY(vlap(5));
+                    }
+                }
+            }
+            &-text {
+                @include font(700, vlap(18), vlap(25));
+            }
+        }
+    }
+}
+@include Tablet {
+    .header {
+        padding: vtab(30) 0;
+        &__logo {
+            &-text {
+                margin-left: vtab(35);
+                @include font(700, vtab(23), vtab(30))
+            }
+        }
+        .search {
+            svg {
+                width: vtab(22);
+            }
+            input {
+                width: vtab(100);
+                margin-left: vtab(26);
+                @include font(700, vtab(18), vtab(25));
+                height: vtab(25);
+                &::placeholder {
+                    @include font(700, vtab(18), vtab(25));
+                }
+            }
+        } 
+        &__location {
+            .location__citys {
+                &-item {
+                    margin: 0 vtab(31) 0 vtab(23);
+                    @include font(700, vtab(18), vtab(25));
+                }
+            }
+        }
+        &__categories {
+            .burger {
+                margin-right: vtab(26);
+                span {
+                    margin-bottom: vtab(12);
+                    width: vtab(22);
+                    height: vtab(2.5);
+                    border-radius: vtab(3);
+                    &::before, &::after {
+                        transform: translateY(vtab(-5));
+                    }
+                    &::after {
+                        transform: translateY(vtab(5));
+                    }
+                }
+            }
+            &-text {
+                @include font(700, vtab(18), vtab(25));
+                display: none;
+            }
+        }
+    }
+}
+@include Phone {
+    .header {
+        padding: vmin(30) 0;
+        &__logo {
+            &-text {
+                margin-left: vmin(35);
+                @include font(700, vmin(23), vmin(30))
+            }
+        }
+        .search {
+            display: none;
+            svg {
+                width: vmin(22);
+            }
+            input {
+                width: vmin(100);
+                margin-left: vmin(26);
+                @include font(700, vmin(18), vmin(25));
+                height: vmin(25);
+                &::placeholder {
+                    @include font(700, vmin(18), vmin(25));
+                }
+            }
+        } 
+        &__location {
+            display: none;
+            .location__citys {
+                &-item {
+                    margin: 0 vmin(31) 0 vmin(23);
+                    @include font(700, vmin(18), vmin(25));
+                }
+            }
+        }
+        &__categories {
+            .burger {
+                margin-right: vmin(26);
+                span {
+                    margin-bottom: vmin(12);
+                    width: vmin(22);
+                    height: vmin(2.5);
+                    border-radius: vmin(3);
+                    &::before, &::after {
+                        transform: translateY(vmin(-5));
+                    }
+                    &::after {
+                        transform: translateY(vmin(5));
+                    }
+                }
+            }
+            &-text {
+                @include font(700, vmin(18), vmin(25));
+            }
+        }
+    }
+}

@@ -1,30 +1,41 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Header from "./components/Header"
+import Hero from "./components/Hero"
+import About from "./components/About"
+import Reviews from "./views/Reviews"
+import Form from "./components/Form"
+import Footer from "./components/Footer"
+  
+export default {
+  components: {Header, Hero, About, Reviews, Form, Footer},
+
+
 }
+</script>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+<style lang="scss">
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("./assets/fonts/SF-Pro-Display-Bold.woff") format("woff");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("./assets/fonts/SF-Pro-Display-Semibold.woff") format("woff");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("./assets/fonts/SF-Pro-Display-Heavy.woff") format("woff");
+    font-weight: 800;
+}
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("./assets/fonts/SF-Pro-Display-Regular.woff") format("woff");
+    font-weight: 400;
 }
 </style>

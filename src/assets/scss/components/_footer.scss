@@ -1,0 +1,335 @@
+.footer {
+    &__container {
+        width: vw(1190);
+        box-sizing: border-box;
+        padding:0 vw(55) vw(67) vw(100);
+        position: relative;
+        border: vw(2) $border-color solid;
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        padding-top: vw(55);
+    }
+    &__list {
+        &-item {
+            margin-bottom: vw(15);
+        }
+        &-link {
+            @include font(700, vw(12), vw(20));
+            text-decoration: none;
+            color: $color-GrayBlue60;
+        }
+    }
+    &__form {
+        input {
+            background-color: $body-bg;
+            border: 2px solid #EDEFF2;
+            border-radius: 30px;
+            width: vw(160);
+            height: vw(50);
+            box-sizing: border-box;
+            padding-left: vw(58);
+            &::placeholder {
+                @include font(700, vw(12), vw(20));
+                color: $color-GrayBlue60;
+            }
+        }
+        &-item {
+            margin-bottom: vw(20);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &-compass {
+            background-image: url("../assets/img/form-svg/compass-grayblue.svg");
+            background-repeat: no-repeat;
+            background-position: vw(26) 50%;
+        }
+        &-cart {
+            background-image: url("../assets/img/form-svg/cart-grayblue.svg");
+            background-repeat: no-repeat;
+            background-position: vw(26) 50%;
+        }
+    }
+    &__social {
+        &-info {
+            @include font(700, vw(12), vw(20));
+            color: $color-GrayBlue60;
+            margin-bottom: vw(35);
+        }
+        &-networks {
+            img {
+                width: vw(20);
+                height: vw(20);
+                margin-right: vw(20);
+            }
+        }
+    }
+    &__button {
+        position: absolute;
+        bottom: 15%;
+        right: 4%;
+        &-chat {
+            background: $orange-bg;
+            box-shadow: 0px 10px 30px rgba(255, 102, 51, 0.15);
+        }
+        &-top {
+            box-shadow: 0px 10px 30px rgba(61, 66, 77, 0.03);
+        }
+        button {
+            width: vw(60);
+            height: vw(60);
+            border-radius: 50%;
+            text-align: center;
+            border: none;
+            margin-right: vw(20);
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &__policy {
+        @include flex($justify: space-between);
+        width: vw(1190);
+        padding:vw(35) vw(55) vw(35) vw(100);
+        box-sizing: border-box;
+        border-right: vw(2) $border-color solid;
+        &-title {
+            @include font(700, vw(13), vw(30));
+            color: $color-GrayBlue60;
+        }
+        &-list {
+            list-style-type: none;
+            @include flex();
+            li {
+            margin-right: vw(30);
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                text-decoration: none;
+                @include font(700, vw(13), vw(30));
+                color: $color-GrayBlue60;
+            }
+            }
+        }
+    }
+}
+
+@include Desctop {
+    .footer {
+        &__container {
+            width: vdes(1330);
+            padding:0 vdes(55) vdes(67) vdes(100);
+        }
+        &__content {
+            padding-top: vdes(55);
+        }
+        &__list {
+            &-item {
+                margin-bottom: vdes(15);
+            }
+            &-link {
+                @include font(700, vdes(17), vdes(25));
+            }
+        }
+        &__form {
+            input {
+                width: vdes(180);
+                height: vdes(50);
+                padding-left: vdes(70);
+                &::placeholder {
+                    @include font(700, vdes(17), vdes(25));
+                }
+            }
+            &-item {
+                margin-bottom: vdes(20);
+            }
+            &-compass {
+                background-position: vdes(26) 50%;
+            }
+            &-cart {
+                background-position: vdes(26) 50%;
+            }
+        }
+        &__social {
+            &-info {
+                @include font(700, vdes(17), vdes(25));
+                margin-bottom: vdes(35);
+            }
+            &-networks {
+                img {
+                    width: vdes(20);
+                    height: vdes(20);
+                    margin-right: vdes(20);
+                }
+            }
+        }
+        &__button {
+            button {
+                width: vdes(60);
+                height: vdes(60);
+                margin-right: vdes(20);
+            }
+        }
+        &__policy {
+            width: vdes(1330);
+            padding:vdes(35) vdes(55) vdes(35) vdes(100);
+            &-title {
+                @include font(700, vdes(18), vdes(35));
+            }
+            &-list {
+                li {
+                margin-right: vdes(30);
+                a {
+                    @include font(700, vdes(18), vdes(35));
+                }
+                }
+            }
+        }
+    }
+}
+@include Laptop {
+    .footer {
+        &__container {
+            width: vlap(860);
+        }
+        &__content {
+            flex-wrap: wrap;
+        }
+        &__list {
+            width: vlap(150);
+            &-link {
+                @include font(700, vlap(17), vlap(25));
+            }
+        }
+        &__form {
+            input {
+                width: vlap(200);
+                &::placeholder {
+                    @include font(700, vlap(17), vlap(25));
+                }
+            }
+        }
+        &__social {
+            margin-top: vlap(70);
+            &-info {
+                @include font(700, vlap(17), vlap(25));
+            }
+        }
+        &__policy {
+            width: vlap(860);
+            &-title {
+                @include font(700, vlap(18), vlap(35));
+            }
+            &-list {
+                a {
+                    @include font(700, vlap(18), vlap(35));
+                }
+            }
+        }
+    }
+}
+@include Tablet {
+    .footer {
+        &__container {
+            width: 100%;
+        }
+        &__content {
+            flex-wrap: wrap;
+        }
+        &__list {
+            width: vlap(150);
+            &-link {
+                @include font(700, vlap(17), vlap(25));
+            }
+        }
+        &__form {
+            input {
+                width: vlap(200);
+                &::placeholder {
+                    @include font(700, vlap(17), vlap(25));
+                }
+            }
+        }
+        &__social {
+            margin-top: 0;
+            &-info {
+                @include font(700, vlap(17), vlap(25));
+            }
+        }
+        &__policy {
+            width: 100%;
+            &-title {
+                @include font(700, vlap(18), vlap(35));
+            }
+            &-list {
+                a {
+                    @include font(700, vlap(18), vlap(35));
+                }
+            }
+        }
+    }
+}
+@include Phone {
+    .footer {
+        &__list {
+            width: vmin(150);
+            margin-bottom: vmin(30);
+            &-link {
+                @include font(700, vmin(17), vmin(25));
+            }
+        }
+        &__form {
+            input {
+                width: vmin(200);
+                height: vmin(50);
+                padding-left: vmin(40);
+                &::placeholder {
+                    @include font(700, vmin(17), vmin(25));
+                }
+            }
+        }
+        &__button {
+            position: absolute;
+            bottom: 5%;
+            right: 4%;
+            button {
+                width: vmin(60);
+                height: vmin(60);
+                margin-right: vmin(20);
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        &__social {
+            margin-top: vmin(40);
+            &-info {
+                @include font(700, vmin(17), vmin(25));
+            }
+            &-networks {
+                img {
+                    width: vmin(20);
+                    height: vmin(20);
+                    margin-right: vmin(20);
+                }
+            }
+        }
+        &__policy {
+            flex-direction: column;
+            &-title {
+                @include font(700, vmin(18), vmin(35));
+            }
+            &-list {
+                li {
+                    a {
+                        @include font(700, vmin(18), vmin(35));
+                    }
+                }
+            }
+        }
+    }
+}
+

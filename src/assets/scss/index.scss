@@ -1,0 +1,137 @@
+//helpers
+@import './helpers/functions';
+@import './helpers/mixins';
+@import './helpers/_variables';
+@import './helpers/_media';
+
+//components
+@import './components/header';
+@import './components/footer';
+@import './components/sidebar';
+
+body {
+    background: $body-bg;
+}
+
+body, h3, h4, h5, h6, ul, div, span, p {
+    padding: 0;
+    margin: 0;
+}
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: vw(1110);
+    margin-left: vw(80);
+    padding-right: vw(55);
+    box-sizing: border-box;
+    border-right: vw(2) $border-color solid;
+    &-review {
+        padding: vw(30) vw(55) vw(30) 0 ; 
+    }
+}
+.title {
+    @include font(600, vw(30), vw(60));
+    position: relative;
+    z-index: 1;
+    color: #4D5E80;
+}
+.bg-text {
+    @include font(800, vw(90), vw(160));
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: vw(900);
+    transform: translate(-50%, -50%);
+    color: rgba(0, 40, 129, 1);
+    opacity: 0.03;
+    z-index: -1;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.col-3 {
+    width: 25%;
+}
+.col-5 {
+    width: 41.6%;
+}
+.col-7 {
+    width: 55.3%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.col-md-2 {
+    grid-column: span 2;
+}
+
+@include Desctop {
+    .container {
+        width: vdes(1250);
+        margin-left: vdes(80);
+        padding-right: vdes(55);
+        border-right: vdes(2) $border-color solid;
+        &-review {
+            padding: vdes(30) vdes(55) vdes(30) 0 ; 
+        }
+    }
+    .title {
+        @include font(600, vdes(30), vdes(60));
+    }
+    .bg-text {
+        @include font(800, vdes(90), vdes(100));
+        width: vw(900);
+    }
+    .col-3 {
+        width: 25%;
+    }
+    .col-5 {
+        width: 41.6%;
+    }
+    .col-7 {
+        width: 55.3%;
+    }
+}
+
+@include Laptop {
+    .container {
+        width: vlap(780);
+        margin-left: vlap(80);
+        padding-right: vlap(55);
+        border-right: vlap(2) $border-color solid;
+        &-review {
+            padding: vlap(30) vlap(55) vlap(30) 0 ; 
+        }
+    }
+    .col-3 {
+        width: 33%;
+    }
+}
+
+@include Tablet {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        padding-right: 0;
+        border-right: none;
+    }
+}
+
+@include Phone {
+    .col-3 {
+        width: 50%;
+    }
+    .title {
+        @include font(600, vmin(30), vmin(60));
+    }
+    .bg-text {
+        @include font(800, vmin(70), vmin(70));
+        width: 80%;
+    }
+}

@@ -1,0 +1,35 @@
+@mixin Desctop() {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+@function vdes($px, $base: 1200) {
+	@return $px / $base * 100vmin;
+};
+
+@mixin Laptop() {
+	@media screen and (max-width: 992px) {
+		@content;
+	}
+}
+@function vlap($px, $base: 992) {
+	@return $px / $base * 100vmin;
+};
+
+@mixin Tablet() {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+@function vtab($px, $base: 768) {
+	@return $px / $base * 100vmin;
+};
+
+@mixin Phone() {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}
+@function vmin($px, $base: 480) {
+	@return $px / $base * 100vmin;
+};
